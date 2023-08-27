@@ -4,7 +4,6 @@ import scipy.stats as stats
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.arima.model import ARIMA
 import statsmodels.tsa.stattools as st
-from arch import arch_model
 
 def self_JBtest(y):
     # 样本规模n
@@ -29,8 +28,8 @@ def self_JBtest(y):
     return np.array([JB,pvalue])
 
 def AdfTest(seq):
-    dftest = adfuller(seq,autolag='AIC')
-    print(dftest)
+    dftest = adfuller(seq, autolag='AIC')
+    print('ADF检验', dftest)
 
 def ARMA(seq):
     order_analyze = st.arma_order_select_ic(seq, max_ar=5, max_ma=5, ic=['aic'])
@@ -38,8 +37,6 @@ def ARMA(seq):
     arma_model = ARIMA(seq, order=(1, 0, 0)).fit()
     print(arma_model)
     # print(arma_model.params)
-
-# am=arch_model(resid1) #默认模型为GARCH（1，1）
 
 sheets = ['SSEC', 'SCI', 'FTSE100', 'DAX30', 'CAC40']
 ret = {}
@@ -52,9 +49,13 @@ for sheet in sheets:
         rate = (close[i] - close[i-1]) / close[i-1]
         rates.append(rate)
     print(sheet)
-    self_JBtest(rates) # JB检验
-    AdfTest(rates) # ADF检验
+    # self_JBtest(rates)  # JB检验
+    print("JB检验：", stats.jarque_bera(rates))
+    AdfTest(rates)  # ADF检验
     ret[sheet] = rates
 
-saveDf = pd.DataFrame(ret)
-saveDf.to_excel('收益率.xlsx', index = False)
+writer = pd.ExcelWriter('收益率.xlsx')
+for sheetName, close in ret.items():
+    closeDf = pd.DataFrame({ 'close':close })
+    closeDf.to_excel(writer, sheet_name = sheetName, index = False)
+writer.save()
