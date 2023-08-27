@@ -25,6 +25,10 @@ def self_JBtest(y):
     print("JB检验：",stats.jarque_bera(y))
     return np.array([JB,pvalue])
 
+def AdfTest(seq):
+    dftest = adfuller(seq,autolag='AIC')
+    print(dftest)
+
 sheets = ['SSEC', 'SCI', 'FTSE100', 'DAX30', 'CAC40']
 ret = {}
 
@@ -36,6 +40,7 @@ for sheet in sheets:
         rate = (close[i] - close[i-1]) / close[i-1]
         rates.append(rate)
     self_JBtest(rates) # JB检验
+    AdfTest(rates) # ADF检验
     ret[sheet] = rates
 
 saveDf = pd.DataFrame(ret)
