@@ -2,6 +2,9 @@ import pandas as pd
 import numpy as np
 import scipy.stats as stats
 from statsmodels.tsa.stattools import adfuller
+from statsmodels.tsa.arima.model import ARIMA
+import statsmodels.tsa.stattools as st
+from arch import arch_model
 
 def self_JBtest(y):
     # 样本规模n
@@ -29,6 +32,15 @@ def AdfTest(seq):
     dftest = adfuller(seq,autolag='AIC')
     print(dftest)
 
+def ARMA(seq):
+    order_analyze = st.arma_order_select_ic(seq, max_ar=5, max_ma=5, ic=['aic'])
+    # order_analyze.bic_min_order
+    arma_model = ARIMA(seq, order=(1, 0, 0)).fit()
+    print(arma_model)
+    # print(arma_model.params)
+
+# am=arch_model(resid1) #默认模型为GARCH（1，1）
+
 sheets = ['SSEC', 'SCI', 'FTSE100', 'DAX30', 'CAC40']
 ret = {}
 
@@ -39,6 +51,7 @@ for sheet in sheets:
     for i in range(1, len(close)):
         rate = (close[i] - close[i-1]) / close[i-1]
         rates.append(rate)
+    print(sheet)
     self_JBtest(rates) # JB检验
     AdfTest(rates) # ADF检验
     ret[sheet] = rates
