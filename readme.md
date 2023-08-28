@@ -83,8 +83,15 @@ AIC=-23198.25   AICc=-23198.25   BIC=-23192.22
 
 第三步
 ------------
-### 对SSEC的ARIMA残差
-* ADF检验：Dickey-Fuller = -13.721, Lag order = 14, p-value = 0.01（实际比这小）
+用GARCH拟合ARIMA最优模型的残差
+### SSEC
+* GARCH
+```
+Coefficient(s):
+        mu       omega      alpha1       beta1  
+3.9448e-05  2.6822e-07  6.9267e-02  9.2436e-01
+```
+* ADF检验：Dickey-Fuller = -13.721, Lag order = 14, p-value = 0.01（实际比这个小）
 * BDS检验
 ```
 Epsilon for close points =  0.0028 0.0056 0.0084 0.0112 
@@ -99,11 +106,18 @@ p-value =
 [ 2 ]          0          0          0          0
 [ 3 ]          0          0          0          0
 ```
-### 对SCI的ARIMA残差
-* ADF检验：Dickey-Fuller = -13.723, Lag order = 14, p-value = 0.01（实际比这小）
-* BDS检验
+* CVM检验：omega2 = 962.79, p-value < 2.2e-16
+
+### SCI
+* GARCH
 ```
-Epsilon for close points =  0.0034 0.0069 0.0103 0.0137 
+Coefficient(s):
+        mu       omega      alpha1       beta1  
+1.8862e-05  6.4036e-07  6.0585e-02  9.2564e-01  
+```
+* ADF检验：Dickey-Fuller = -13.723, Lag order = 14, p-value = 0.01（实际比这个小）
+* BDS检验
+```Epsilon for close points =  0.0034 0.0069 0.0103 0.0137 
 
 Standard Normal = 
       [ 0.0034 ] [ 0.0069 ] [ 0.0103 ] [ 0.0137 ]
@@ -115,8 +129,16 @@ p-value =
 [ 2 ]      1e-04          0          0          0
 [ 3 ]      0e+00          0          0          0
 ```
-### 对FTSE100的ARIMA残差
-* ADF检验：Dickey-Fuller = -13.919, Lag order = 14, p-value = 0.01（实际比这小）
+* CVM检验：omega2 = 960.19, p-value < 2.2e-16
+
+### FTSE100
+* GARCH
+```
+Coefficient(s):
+        mu       omega      alpha1       beta1  
+2.0300e-04  8.4303e-07  1.3186e-01  8.2164e-01  
+```
+* ADF检验：Dickey-Fuller = -13.919, Lag order = 14, p-value = 0.01（实际比这个小）
 * BDS检验
 ```
 Epsilon for close points =  0.0022 0.0044 0.0066 0.0089 
@@ -131,8 +153,16 @@ p-value =
 [ 2 ]          0          0          0          0
 [ 3 ]          0          0          0          0
 ```
-### 对DAX30的ARIMA残差
-* ADF检验：Dickey-Fuller = -14.072, Lag order = 14, p-value = 0.01（实际比这小）
+* CVM检验：omega2 = 1002.4, p-value < 2.2e-16
+
+### DAX30
+* GARCH
+```
+Coefficient(s):
+        mu       omega      alpha1       beta1  
+2.6919e-04  8.4430e-07  1.0628e-01  8.6675e-01  
+```
+* ADF检验：Dickey-Fuller = -14.072, Lag order = 14, p-value = 0.01（实际比这个小）
 * BDS检验
 ```
 Epsilon for close points =  0.0028 0.0056 0.0084 0.0112 
@@ -147,11 +177,18 @@ p-value =
 [ 2 ]          0          0          0          0
 [ 3 ]          0          0          0          0
 ```
-### 对CAC40的ARIMA残差
-* ADF检验：Dickey-Fuller = -14.861, Lag order = 14, p-value = 0.01（实际比这小）
-* BDS检验
+* CVM检验：omega2 = 1004.8, p-value < 2.2e-16
+
+### CAC40
+* GARCH
 ```
-Epsilon for close points =  0.0028 0.0056 0.0083 0.0111 
+Coefficient(s):
+        mu       omega      alpha1       beta1  
+2.5779e-04  1.0548e-06  1.3779e-01  8.3029e-01  
+```
+* ADF检验：Dickey-Fuller = -14.861, Lag order = 14, p-value = 0.01（实际比这个小）
+* BDS检验
+```Epsilon for close points =  0.0028 0.0056 0.0083 0.0111 
 
 Standard Normal = 
       [ 0.0028 ] [ 0.0056 ] [ 0.0083 ] [ 0.0111 ]
@@ -163,3 +200,4 @@ p-value =
 [ 2 ]          0          0          0          0
 [ 3 ]          0          0          0          0
 ```
+* CVM检验：omega2 = 1014.6, p-value < 2.2e-16
