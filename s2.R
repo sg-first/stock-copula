@@ -7,6 +7,13 @@ FTSE100 = auto.arima(rates$FTSE100, trace=T)
 DAX30 = auto.arima(rates$DAX30, trace=T)
 CAC40 = auto.arima(rates$CAC40, trace=T)
 
+print('ARIMA最优模型')
+print(SSEC)
+print(SCI)
+print(FTSE100)
+print(DAX30)
+print(CAC40)
+
 SSEC_Res = na.omit(SSEC$residuals)
 SCI_Res = na.omit(SCI$residuals)
 FTSE100_Res = na.omit(FTSE100$residuals)
