@@ -20,6 +20,7 @@ FTSE100_Res = na.omit(FTSE100$residuals)
 DAX30_Res = na.omit(DAX30$residuals)
 CAC40_Res = na.omit(CAC40$residuals)
 
+library('tseries')
 print('残差ADF检验')
 print(adf.test(SSEC_Res))
 print(adf.test(SCI_Res))
@@ -36,7 +37,6 @@ print(bds.test(CAC40_Res))
 # GARCH
 print('开始GARCH')
 library('fGarch')
-library('tseries')
 #library('rugarch')
 garch = function(seq)
 {

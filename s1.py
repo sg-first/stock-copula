@@ -4,6 +4,7 @@ import scipy.stats as stats
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.arima.model import ARIMA
 import statsmodels.tsa.stattools as st
+import math
 
 def self_JBtest(y):
     # 样本规模n
@@ -29,7 +30,7 @@ def self_JBtest(y):
 
 def AdfTest(seq):
     dftest = adfuller(seq, autolag='AIC')
-    print('ADF检验', dftest)
+    print('* ADF检验：', dftest)
 
 def ARMA(seq):
     order_analyze = st.arma_order_select_ic(seq, max_ar=5, max_ma=5, ic=['aic'])
@@ -46,11 +47,12 @@ for sheet in sheets:
     close = df['close']
     rates = []
     for i in range(1, len(close)):
-        rate = (close[i] - close[i-1]) / close[i-1]
+        # rate = (close[i] - close[i-1]) / close[i-1]
+        rate = math.log((close[i] / close[i-1]), 10)
         rates.append(rate)
     print(sheet)
     # self_JBtest(rates)  # JB检验
-    print("JB检验：", stats.jarque_bera(rates))
+    print("* JB检验：", stats.jarque_bera(rates))
     AdfTest(rates)  # ADF检验
     ret[sheet] = rates
 
