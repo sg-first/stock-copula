@@ -13,6 +13,7 @@ DAX30_PIT = pstd(DAX30_GARCH_Res)[1:2917]
 CAC40_PIT = pstd(CAC40_GARCH_Res)[1:2917]
 
 df = data.frame(SSEC_PIT, SCI_PIT, FTSE100_PIT, DAX30_PIT, CAC40_PIT)
+write.csv(df, file = "res.csv", row.names = FALSE)
 print(cor(df, method = "kendall"))
 
 print(plot(SSEC_PIT~SCI_PIT))
