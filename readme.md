@@ -215,3 +215,14 @@ CAC40_PIT    0.010016492  0.002915128 -0.014370139  0.116881645  1.000000000
 ```
 ### 配对图
 ![配对图](残差配对图.png)
+
+第六步
+----------
+### 最大生成树的边参数
+* SSEC-SCI: family = t, rotation = 0, parameters = 0.99, 4.97（边权值0.726976294）
+* DAX30-CAC40: family = bb1, rotation = 180, parameters = 0, 6.56（边权值0.116881645）
+* FTSE100-CAC40: family = t, rotation = 0, parameters = 0.97, 5.07（边权值-0.014370139）
+* SSEC-FTSE100: family = t, rotation = 0, parameters = 0.97, 5.07（边权值0.011138057）
+
+### 最大生成树结构
+![copula生成树](copula生成树.png)
