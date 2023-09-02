@@ -14,14 +14,20 @@ CAC40 = guiyi(df$CAC40)
 FTSE100 = guiyi(df$FTSE100)
 
 library(rvinecopulib)
-
+library(stats)
 copula = function(seqA, seqB)
 {
   AB = data.frame(seqA, seqB)
-  print(bicop(AB))
+  obj = bicop(AB)
+  print(obj)
+  print(AIC(obj))
+  print(BIC(obj))
+  start = c(0,0)
+  fitRet = fitCopula(tCopula(), as.matrix(AB), start = start)
+  print(fitRet)
 }
 
 copula(SSEC, SCI)
 copula(DAX30, CAC40)
 copula(FTSE100, CAC40)
-coupla(SSEC, FTSE100)
+copula(SSEC, FTSE100)
