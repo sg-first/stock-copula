@@ -102,9 +102,12 @@ AIC=-23198.25   AICc=-23198.25   BIC=-23192.22
 ### SSEC
 * GARCH
 ```
-Coefficient(s):
-        mu       omega      alpha1       beta1       shape  
-1.2691e-04  2.5269e-07  5.6085e-02  9.3781e-01  4.5804e+00  
+        Estimate  Std. Error  t value Pr(>|t|)    
+mu     1.269e-04   7.230e-05    1.755  0.07920 .  
+omega  2.527e-07   8.340e-08    3.030  0.00245 ** 
+alpha1 5.609e-02   8.540e-03    6.567 5.12e-11 ***
+beta1  9.378e-01   8.659e-03  108.308  < 2e-16 ***
+shape  4.580e+00   4.070e-01   11.255  < 2e-16 ***
 ```
 * ADF检验：Dickey-Fuller = -13.721, Lag order = 14, p-value = 0.01（实际比这个小）
 * BDS检验
@@ -126,9 +129,12 @@ p-value =
 ### SCI
 * GARCH
 ```
-Coefficient(s):
-        mu       omega      alpha1       beta1       shape  
-1.3847e-04  5.9912e-07  5.8808e-02  9.2922e-01  5.6827e+00  
+        Estimate  Std. Error  t value Pr(>|t|)    
+mu     1.385e-04   9.827e-05    1.409  0.15883    
+omega  5.991e-07   1.867e-07    3.208  0.00133 ** 
+alpha1 5.881e-02   8.714e-03    6.749 1.49e-11 ***
+beta1  9.292e-01   1.004e-02   92.556  < 2e-16 ***
+shape  5.683e+00   6.067e-01    9.366  < 2e-16 ***
 ```
 * ADF检验：Dickey-Fuller = -13.723, Lag order = 14, p-value = 0.01（实际比这个小）
 * BDS检验
@@ -151,8 +157,12 @@ p-value =
 * GARCH
 ```
 Coefficient(s):
-        mu       omega      alpha1       beta1       shape  
-2.7439e-04  6.9047e-07  1.3695e-01  8.3047e-01  6.0589e+00  
+        Estimate  Std. Error  t value Pr(>|t|)    
+mu     2.744e-04   5.851e-05    4.690 2.74e-06 ***
+omega  6.905e-07   1.672e-07    4.129 3.64e-05 ***
+alpha1 1.370e-01   2.068e-02    6.622 3.56e-11 ***
+beta1  8.305e-01   2.431e-02   34.161  < 2e-16 ***
+shape  6.059e+00   6.654e-01    9.105  < 2e-16 ***
 ```
 * ADF检验：Dickey-Fuller = -13.919, Lag order = 14, p-value = 0.01（实际比这个小）
 * BDS检验
@@ -174,9 +184,12 @@ p-value =
 ### DAX30
 * GARCH
 ```
-Coefficient(s):
-        mu       omega      alpha1       beta1       shape  
-3.5119e-04  5.4662e-07  1.1467e-01  8.7770e-01  4.9989e+00  
+        Estimate  Std. Error  t value Pr(>|t|)    
+mu     3.512e-04   7.154e-05    4.909 9.17e-07 ***
+omega  5.466e-07   1.692e-07    3.230  0.00124 ** 
+alpha1 1.147e-01   1.819e-02    6.303 2.92e-10 ***
+beta1  8.777e-01   1.813e-02   48.398  < 2e-16 ***
+shape  4.999e+00   4.935e-01   10.129  < 2e-16 ***
 ```
 * ADF检验：Dickey-Fuller = -14.072, Lag order = 14, p-value = 0.01（实际比这个小）
 * BDS检验
@@ -198,9 +211,12 @@ p-value =
 ### CAC40
 * GARCH
 ```
-Coefficient(s):
-        mu       omega      alpha1       beta1       shape  
-3.4089e-04  6.0135e-07  1.3722e-01  8.5480e-01  5.1924e+00  
+        Estimate  Std. Error  t value Pr(>|t|)    
+mu     3.409e-04   6.835e-05    4.987 6.12e-07 ***
+omega  6.014e-07   1.647e-07    3.652 0.000261 ***
+alpha1 1.372e-01   2.021e-02    6.791 1.11e-11 ***
+beta1  8.548e-01   1.933e-02   44.210  < 2e-16 ***
+shape  5.192e+00   4.897e-01   10.604  < 2e-16 ***
 ```
 * ADF检验：Dickey-Fuller = -14.861, Lag order = 14, p-value = 0.01（实际比这个小）
 * BDS检验
