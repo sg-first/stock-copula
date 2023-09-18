@@ -26,7 +26,7 @@ library('fGarch')
 #library('rugarch')
 garch = function(seq)
 {
-  model = garchFit(~garch(1,1), data=seq, trace=F)
+  model = garchFit(~garch(1,1), data=seq, trace=F, cond.dist='std')
   return(model)
 }
 SSEC_GARCH = garch(SSEC_Res)

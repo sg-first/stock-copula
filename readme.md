@@ -103,8 +103,8 @@ AIC=-23198.25   AICc=-23198.25   BIC=-23192.22
 * GARCH
 ```
 Coefficient(s):
-        mu       omega      alpha1       beta1  
-3.9448e-05  2.6822e-07  6.9267e-02  9.2436e-01
+        mu       omega      alpha1       beta1       shape  
+1.2691e-04  2.5269e-07  5.6085e-02  9.3781e-01  4.5804e+00  
 ```
 * ADF检验：Dickey-Fuller = -13.721, Lag order = 14, p-value = 0.01（实际比这个小）
 * BDS检验
@@ -121,18 +121,19 @@ p-value =
 [ 2 ]          0          0          0          0
 [ 3 ]          0          0          0          0
 ```
-* CVM检验：omega2 = 962.79, p-value < 2.2e-16
+* CVM检验：omega2 = 962.98, p-value < 2.2e-16
 
 ### SCI
 * GARCH
 ```
 Coefficient(s):
-        mu       omega      alpha1       beta1  
-1.8862e-05  6.4036e-07  6.0585e-02  9.2564e-01  
+        mu       omega      alpha1       beta1       shape  
+1.3847e-04  5.9912e-07  5.8808e-02  9.2922e-01  5.6827e+00  
 ```
 * ADF检验：Dickey-Fuller = -13.723, Lag order = 14, p-value = 0.01（实际比这个小）
 * BDS检验
-```Epsilon for close points =  0.0034 0.0069 0.0103 0.0137 
+```
+Epsilon for close points =  0.0034 0.0069 0.0103 0.0137 
 
 Standard Normal = 
       [ 0.0034 ] [ 0.0069 ] [ 0.0103 ] [ 0.0137 ]
@@ -144,14 +145,14 @@ p-value =
 [ 2 ]      1e-04          0          0          0
 [ 3 ]      0e+00          0          0          0
 ```
-* CVM检验：omega2 = 960.19, p-value < 2.2e-16
+* CVM检验：omega2 = 960.45, p-value < 2.2e-16
 
 ### FTSE100
 * GARCH
 ```
 Coefficient(s):
-        mu       omega      alpha1       beta1  
-2.0300e-04  8.4303e-07  1.3186e-01  8.2164e-01  
+        mu       omega      alpha1       beta1       shape  
+2.7439e-04  6.9047e-07  1.3695e-01  8.3047e-01  6.0589e+00  
 ```
 * ADF检验：Dickey-Fuller = -13.919, Lag order = 14, p-value = 0.01（实际比这个小）
 * BDS检验
@@ -168,14 +169,14 @@ p-value =
 [ 2 ]          0          0          0          0
 [ 3 ]          0          0          0          0
 ```
-* CVM检验：omega2 = 1002.4, p-value < 2.2e-16
+* CVM检验：omega2 = 1005, p-value < 2.2e-16
 
 ### DAX30
 * GARCH
 ```
 Coefficient(s):
-        mu       omega      alpha1       beta1  
-2.6919e-04  8.4430e-07  1.0628e-01  8.6675e-01  
+        mu       omega      alpha1       beta1       shape  
+3.5119e-04  5.4662e-07  1.1467e-01  8.7770e-01  4.9989e+00  
 ```
 * ADF检验：Dickey-Fuller = -14.072, Lag order = 14, p-value = 0.01（实际比这个小）
 * BDS检验
@@ -192,18 +193,19 @@ p-value =
 [ 2 ]          0          0          0          0
 [ 3 ]          0          0          0          0
 ```
-* CVM检验：omega2 = 1004.8, p-value < 2.2e-16
+* CVM检验：omega2 = 1014.8, p-value < 2.2e-16
 
 ### CAC40
 * GARCH
 ```
 Coefficient(s):
-        mu       omega      alpha1       beta1  
-2.5779e-04  1.0548e-06  1.3779e-01  8.3029e-01  
+        mu       omega      alpha1       beta1       shape  
+3.4089e-04  6.0135e-07  1.3722e-01  8.5480e-01  5.1924e+00  
 ```
 * ADF检验：Dickey-Fuller = -14.861, Lag order = 14, p-value = 0.01（实际比这个小）
 * BDS检验
-```Epsilon for close points =  0.0028 0.0056 0.0083 0.0111 
+```
+Epsilon for close points =  0.0028 0.0056 0.0083 0.0111 
 
 Standard Normal = 
       [ 0.0028 ] [ 0.0056 ] [ 0.0083 ] [ 0.0111 ]
@@ -222,11 +224,11 @@ p-value =
 ### Kendall相关度
 ```
                 SSEC_PIT      SCI_PIT  FTSE100_PIT    DAX30_PIT    CAC40_PIT
-SSEC_PIT     1.000000000  0.726976294  0.011138057 -0.005267358  0.010016492
-SCI_PIT      0.726976294  1.000000000  0.004774058 -0.009234923  0.002915128
-FTSE100_PIT  0.011138057  0.004774058  1.000000000  0.002866222 -0.014370139
-DAX30_PIT   -0.005267358 -0.009234923  0.002866222  1.000000000  0.116881645
-CAC40_PIT    0.010016492  0.002915128 -0.014370139  0.116881645  1.000000000
+SSEC_PIT     1.000000000  0.726898701  0.010906220 -0.005301217  0.009875415
+SCI_PIT      0.726898701  1.000000000  0.005022354 -0.009410330  0.002810261
+FTSE100_PIT  0.010906220  0.005022354  1.000000000  0.002791451 -0.014208841
+DAX30_PIT   -0.005301217 -0.009410330  0.002791451  1.000000000  0.114052574
+CAC40_PIT    0.009875415  0.002810261 -0.014208841  0.114052574  1.000000000
 ```
 ### 配对图
 ![配对图](残差配对图.png)
